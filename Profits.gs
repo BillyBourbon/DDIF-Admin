@@ -2,7 +2,7 @@ function profits(){
   var inv = sss.getSheetByName("Investors")
   var profit = sss.getSheetByName("Profit")
   
-  var sSheet = SpreadsheetApp.openById("1oDNMEvBDjPaqsS0tGjK7SUdXFekQ2hdpEV9z_Xhzqqw").getSheetByName("months")
+  var sSheet = SpreadsheetApp.openById("XXXXXXXX").getSheetByName("months")
   
   var monthN = profit.getRange(profit.getLastRow(),1).getValue()
   var month = profit.getRange(profit.getLastRow(),2).getValue()
