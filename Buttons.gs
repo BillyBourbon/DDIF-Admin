@@ -1,7 +1,7 @@
 function createTrigger(){
 ScriptApp.newTrigger('button')
-    // insert the file ID for the spreadsheet you'd like to edit
-   .forSpreadsheet('1HQBCSnHxx8IRAEwoYlz_c3FsDFB2pdH4yqB7KWop-18')
+    //file ID for the DDIF sheet
+   .forSpreadsheet('XXXXXXXXX')
    .onEdit()
    .create();
 Logger.log("Added Trigger For Button")
@@ -32,5 +32,17 @@ function button(e){
     s.getRange("C19").clearContent()
     s.getRange("C23:C24").clearContent()
     }
-  
+  if(sheet == "Entry Forms" && range == "C29"){
+    var r = s.getRange("B30")
+    r.setValue("Running DONT Spam The Button")
+    SpreadsheetApp.flush()
+    snap_shot()
+    r.setValue("SnapShot Made. Sorting Reinvestments Now Please Wait")
+    SpreadsheetApp.flush()
+    reinvestments()
+    var now = Utilities.formatDate(new Date(),"GMT","dd/MM/YY - HH:mm")
+    r.setValue("Done. Last Ran At "+now)
+    s.getRange("C29").setValue(false)
+    SpreadsheetApp.flush()
+    }
 }
