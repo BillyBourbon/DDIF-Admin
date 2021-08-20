@@ -1,4 +1,4 @@
-const url = "https://docs.google.com/spreadsheets/d/1HQBCSnHxx8IRAEwoYlz_c3FsDFB2pdH4yqB7KWop-18/edit?usp=drivesdk"
+const url = "XXXXXX"
 const sss = SpreadsheetApp.openByUrl(url)
 
 function remove_triggers(){
@@ -73,4 +73,5 @@ function log(msg){
   var time = Utilities.formatDate(new Date(),"GMT","dd/MM/YY - HH:mm:ss")
   var sheet = sss.getSheetByName("Script Logs")
   sheet.getRange(sheet.getLastRow()+1,1,1,2).setValues([[time,msg]])
-  }
+  Logger.log("msg: "+msg)
+}
